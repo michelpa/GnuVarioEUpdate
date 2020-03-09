@@ -1,0 +1,43 @@
+security:
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    encoders:
+        # this internal class is used by Symfony to represent in-memory users
+        Symfony\Component\Security\Core\User\User: 'bcrypt'    
+    providers:
+         backend_users:
+            memory:
+                users:
+                    pascal: { password: '$2y$13$ypyCKJq/qvmJp4HoYDr3xuuYouOyBs4.23sSmP3DCTdUwDzmf2/R2', roles: ['ROLE_SUPER_ADMIN'] }
+                    jpg63: { password: '$2y$13$onQnj7oIkxUeToscKUPL1eZOq8iiwiJbJOwyBvg1MiOSdJQA5auq6', roles: ['ROLE_SUPER_ADMIN'] }
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        adminz:
+            anonymous: ~
+            pattern: ^/adminz
+            provider: backend_users
+            form_login:
+                csrf_token_generator: security.csrf.token_manager
+                login_path: adminz_login
+                check_path: adminz_login
+                default_target_path: /adminz
+            logout:
+                path: adminz_logout
+                target: /adminz
+        main:
+            anonymous: lazy
+            
+
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#firewalls-authentication
+
+            # https://symfony.com/doc/current/security/impersonating_user.html
+            # switch_user: true
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/adminz/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/adminz, roles: ROLE_SUPER_ADMIN }
+        # - { path: ^/profile, roles: ROLE_USER }

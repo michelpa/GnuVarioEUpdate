@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+  
+
+ {% block navsection %}
+ 	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+     
+      <a class="navbar-brand" href="/">
+        {% block brand %}
+        <div id="my-logo" class="logo">
+        <img src="{{ asset('/assets/img/logo.svg') }}" alt="">
+        </div>
+        {% endblock brand %}
+        <span class="menu-title">GnuVario-E - Mises à jour et ressources</span>
+      </a>
+     
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        
+        {% block navbar %}
+
+        {% endblock navbar %}
+        {% block search %}
+        {% endblock search %}
+      </div>
+    </nav>
+{% endblock navsection %}
+
+{% block banner %}
+<div class="banner"></div>
+{% endblock %}
+
+
+
+

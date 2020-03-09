@@ -1,0 +1,82 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block title %}Liste des versions de firmware{% endblock %}
+
+{% block actionbtns %}
+	<a href="{{ path('adminz_varioversion_new') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Ajouter une version</a>
+    <a href="{{ path('adminz_varioversion_liste_maj') }}" class="btn btn-primary">Liste des varios</a>
+{% endblock actionbtns %}
+
+{% block actionbartitle %}
+	<h2>Liste des versions de firmware</h2>
+{% endblock actionbartitle %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <div class="card">
+                <div class="card-header">
+                    <h3>Liste des versions</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>FirmwareType</th>
+                                <th>Version</th>
+                                <th>Subversion</th>
+                                <th>Betaversion</th>
+                                <th>Bin</th>
+                                <th>Active</th>
+                                {# <th>Www1</th>
+                                <th>Www2</th>
+                                <th>Www3</th>
+                                <th>Www4</th>
+                                <th>Www5</th>
+                                <th>Www6</th>
+                                <th>Www7</th>
+                                <th>Www8</th>
+                                <th>Www9</th>
+                                <th>Www10</th> #}
+                                <th>actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for vario_version in vario_versions %}
+                            <tr>
+                                <td>{{ vario_version.id }}</td>
+                                <td>{{ vario_version.firmwareType }}</td>
+                                <td>{{ vario_version.version }}</td>
+                                <td>{{ vario_version.subversion }}</td>
+                                <td>{{ vario_version.betaversion }}</td>
+                                <td>{{ vario_version.bin }}</td>
+                                <td>{{ vario_version.isActive ? 'OUI' : 'NON' }}</td>
+                                {# <td>{{ vario_version.www1 }}</td>
+                                <td>{{ vario_version.www2 }}</td>
+                                <td>{{ vario_version.www3 }}</td>
+                                <td>{{ vario_version.www4 }}</td>
+                                <td>{{ vario_version.www5 }}</td>
+                                <td>{{ vario_version.www6 }}</td>
+                                <td>{{ vario_version.www7 }}</td>
+                                <td>{{ vario_version.www8 }}</td>
+                                <td>{{ vario_version.www9 }}</td>
+                                <td>{{ vario_version.www10 }}</td> #}
+                                <td>
+                                    <a href="{{ path('adminz_varioversion_show', {'id': vario_version.id}) }}" class="btn btn-primary">Voir</a>
+                                    <a href="{{ path('adminz_varioversion_edit', {'id': vario_version.id}) }}" class="btn btn-primary">Editer</a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="17">Aucun enregistrement</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>  
+            </div>
+        </div>
+    </div>
+{% endblock %}

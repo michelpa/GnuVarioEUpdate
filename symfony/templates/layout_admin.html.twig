@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block hrefbrand %}/adminz{% endblock hrefbrand %}
+
+
+ {% block brand %}
+        <div id="my-logo" class="logo">
+        <img src="{{ asset('/assets/img/logo.svg') }}" alt="">
+        </div>
+{% endblock brand %}
+
+
+{% block navbar %}
+    {% set menu = knp_menu_get('admin_main', [], {'class' : 'nav'}) %}
+    {{ knp_menu_render(menu, { 'allow_safe_labels' : true, 'currentClass': 'active', 'template': 'menu/menu.html.twig' }) | raw }}
+{% endblock navbar %}
+
+{% block toolbar %}
+	<div class="container-fluid" id="actionbar_wrapper">
+        <div class="row">
+            <div class="col-md-6">
+                {% block actionbtns %}
+                    {# actionbar #}
+                {% endblock actionbtns %}
+            </div>
+            <div class="col-md-6 text-right">
+                {% block actionbartitle %}{# actionbartitle #}{% endblock actionbartitle %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

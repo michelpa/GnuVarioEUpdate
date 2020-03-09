@@ -1,0 +1,41 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block title %}Nouveau version{% endblock %}
+
+{% block formg_start %}{{ form_start(form) }}{% endblock formg_start %}
+{% block formg_end %}{{ form_end(form) }}{% endblock formg_end %}
+
+{% block actionbtns %}
+	<a href="{{ path('adminz_varioversion_index') }}" class="btn btn-secondary"><i class="fa fa-chevron-left"></i> Retour à la liste</a>
+	<button type="submit" class="btn btn-success">Enregistrer</button>
+{% endblock actionbtns %}
+
+{% block actionbartitle %}
+	<h2>Ajouter une version de firmware</h2>
+{% endblock actionbartitle %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <div class="card">
+                <div class="card-header">
+                    <h3>Nouvelle version</h3>
+				</div>
+				<div class="card-body">
+					<div class="row">
+						<div class="col-md-6">
+							{{ form_row(form.firmwareType) }}
+							{{ form_row(form.version) }}
+							{{ form_row(form.subversion) }}
+							{{ form_row(form.betaversion) }}
+							{{ form_row(form.isActive) }}
+						</div>
+						<div class="col-md-6">{{ form_widget(form) }}</div>
+					</div>
+    				
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

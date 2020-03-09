@@ -1,0 +1,39 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block title %}Fichier{% endblock %}
+
+{% block actionbtns %}
+	<a href="{{ path('adminz_variofichier_index') }}" class="btn btn-secondary"><i class="fa fa-chevron-left"></i> Retour à la liste</a>
+    <a href="{{ path('adminz_variofichier_edit', {'id': vario_fichier.id}) }}" class="btn btn-primary"><i class="fa fa-pen"></i> Editer</a>
+{% endblock actionbtns %}
+
+{% block actionbartitle %}
+	<h2>Détail d'un fichier</h2>
+{% endblock actionbartitle %}
+
+
+{% block content %}
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ vario_fichier.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ vario_fichier.libelle }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ vario_fichier.description }}</td>
+            </tr>
+            <tr>
+                <th>Url</th>
+                <td>{{ app.request.scheme ~'://' ~ app.request.httpHost ~  path('dl_fichier_by_name', {'filename': vario_fichier.filename }) }}</td>
+            </tr>
+        
+        </tbody>
+    </table>
+
+    {{ include('admin/vario_fichier/_delete_form.html.twig') }}
+{% endblock %}

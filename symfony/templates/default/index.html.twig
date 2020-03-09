@@ -1,0 +1,85 @@
+{% extends 'layout_public.html.twig' %}
+
+{% block title %}Mise à jour firmware
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block maincontent %}
+    <div class="row pg-index">
+        <div class="col-md-12">
+            <br>
+            <div class="card">
+                <div class="card-header">
+					<h3>Dernières versions disponibles</h3>
+				</div>
+				<div class="card-body">
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>Type</th>
+								<th>Version</th>
+								<th>Date</th>
+								<th style="width:430px;">Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for v in versions %}
+								<tr>
+									<td>{{ v.firmwareType }}</td>
+									<td>
+										{{ v.version }}.{{ v.subVersion }}{% if v.betaVersion > 0 %}b{{v.betaVersion}}{% endif %}
+									</td>
+									<td>{{ v.updated| date('d/m/Y') }}</td>
+									<td class="action">
+										<a class="btn btn-primary btn-sm" href="{{ path('dl_firmware', {'version' : v.id}) }}"><i class="fa fa-download"></i> Télécharger le firmware</a>
+										{% if v.hasWeb %}
+											<a class="btn btn-primary btn-sm" href="{{ path('dl_web', {'version' : v.id}) }}"><i class="fa fa-download"></i> Télécharger les fichiers web</a>
+										{% endif %}
+									</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-12">
+            <br>
+            <div class="card">
+                <div class="card-header">
+					<h3>Autres fichiers disponibles</h3>
+				</div>
+				<div class="card-body">
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>Libelle</th>
+								<th>Description</th>
+								<th>Version</th>
+								<th>Date</th>
+								<th style="width:430px;">Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for f in fichiers %}
+								<tr>
+									<td>{{ f.libelle }}</td>
+									<td>{{ f.description }}</td>
+									<td>{{ f.numVersion }}</td>
+									<td>{{ f.updated| date('d/m/Y') }}</td>
+									<td class="action">
+										<a class="btn btn-primary btn-sm" href="{{ path('dl_fichier', {'fichier' : f.id}) }}"><i class="fa fa-download"></i> Télécharger le fichier</a>
+									</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block footer %}{% endblock %}

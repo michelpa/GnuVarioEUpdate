@@ -1,0 +1,88 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block title %}Version firmware{% endblock %}
+
+{% block actionbtns %}
+	<a href="{{ path('adminz_varioversion_index') }}" class="btn btn-secondary"><i class="fa fa-chevron-left"></i> Retour à la liste</a>
+    <a href="{{ path('adminz_varioversion_edit', {'id': vario_version.id}) }}" class="btn btn-primary"><i class="fa fa-pen"></i> Editer</a>
+{% endblock actionbtns %}
+
+{% block actionbartitle %}
+	<h2>Détail d'une version de firmware</h2>
+{% endblock actionbartitle %}
+
+
+{% block content %}
+    <h1>Version</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ vario_version.id }}</td>
+            </tr>
+            <tr>
+                <th>FirmwareType</th>
+                <td>{{ vario_version.firmwareType }}</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>{{ vario_version.version }}</td>
+            </tr>
+            <tr>
+                <th>Subversion</th>
+                <td>{{ vario_version.subversion }}</td>
+            </tr>
+            <tr>
+                <th>Betaversion</th>
+                <td>{{ vario_version.betaversion }}</td>
+            </tr>
+            <tr>
+                <th>Bin</th>
+                <td>{{ vario_version.bin }}</td>
+            </tr>
+            <tr>
+                <th>Www1</th>
+                <td>{{ vario_version.www1 }}</td>
+            </tr>
+            <tr>
+                <th>Www2</th>
+                <td>{{ vario_version.www2 }}</td>
+            </tr>
+            <tr>
+                <th>Www3</th>
+                <td>{{ vario_version.www3 }}</td>
+            </tr>
+            <tr>
+                <th>Www4</th>
+                <td>{{ vario_version.www4 }}</td>
+            </tr>
+            <tr>
+                <th>Www5</th>
+                <td>{{ vario_version.www5 }}</td>
+            </tr>
+            <tr>
+                <th>Www6</th>
+                <td>{{ vario_version.www6 }}</td>
+            </tr>
+            <tr>
+                <th>Www7</th>
+                <td>{{ vario_version.www7 }}</td>
+            </tr>
+            <tr>
+                <th>Www8</th>
+                <td>{{ vario_version.www8 }}</td>
+            </tr>
+            <tr>
+                <th>Www9</th>
+                <td>{{ vario_version.www9 }}</td>
+            </tr>
+            <tr>
+                <th>Www10</th>
+                <td>{{ vario_version.www10 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {{ include('admin/vario_version/_delete_form.html.twig') }}
+{% endblock %}

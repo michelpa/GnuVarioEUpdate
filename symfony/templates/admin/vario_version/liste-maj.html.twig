@@ -1,0 +1,41 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block title %}Liste des mises à jour des varios{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <div class="card">
+                <div class="card-header">
+                    <h3>Liste des mises à jour des varios</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Date de maj</th>
+                                <th>uid du vario</th>
+                                <th>Type</th>
+                                <th>Version</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for m in majs %}
+                                <tr>
+                                    <td>{{ m.created | date('d/m/Y H:i:s') }}</td>
+                                    <td>
+                                        <img src="{{ m.uid|identicon }}" />
+                                        {{ m.uid }} 
+                                    </td>
+                                    <td>{{ m.varioVersion.firmwareType }}</td>
+                                    <td>{{ m.varioVersion.version }}.{{ m.varioVersion.subVersion }}{% if m.varioVersion.betaVersion > 0 %}b{{m.varioVersion.betaVersion}}{% endif %}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

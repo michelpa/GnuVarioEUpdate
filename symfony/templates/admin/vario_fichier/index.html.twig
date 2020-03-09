@@ -1,0 +1,57 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block title %}Liste des fichiers{% endblock %}
+
+{% block actionbtns %}
+	<a href="{{ path('adminz_variofichier_new') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Ajouter un fichier</a>
+{% endblock actionbtns %}
+
+{% block actionbartitle %}
+	<h2>Fichiers en base de données</h2>
+{% endblock actionbartitle %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <div class="card">
+                <div class="card-header">
+                    <h3>Liste des fichiers</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>libelle</th>
+                                <th>Active</th>
+                                <th>Url</th>
+                                <th>Num version</th>
+                                <th>actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for vario_fichier in vario_fichiers %}
+                            <tr>
+                                <td>{{ vario_fichier.id }}</td>
+                                <td>{{ vario_fichier.libelle }}</td>
+                                <td>{{ vario_fichier.isActive ? 'OUI' : 'NON' }}</td>
+                                <td>{{ app.request.scheme ~'://' ~ app.request.httpHost ~  path('dl_fichier_by_name', {'filename': vario_fichier.filename }) }}</td>
+                                <td>{{ vario_fichier.numVersion }}</td>
+                                <td>
+                                    <a href="{{ path('adminz_variofichier_show', {'id': vario_fichier.id}) }}" class="btn btn-primary">Voir</a>
+                                    <a href="{{ path('adminz_variofichier_edit', {'id': vario_fichier.id}) }}" class="btn btn-primary">Editer</a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="17">Aucun enregistrement</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

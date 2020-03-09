@@ -1,0 +1,94 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block title %}Administration{% endblock %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-md-12">
+			<br>
+			<div class="card">
+				<div class="card-header">
+					<h3>Liste des versions</h3>
+				</div>
+				<div class="card-body">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>FirmwareType</th>
+								<th>Version</th>
+								<th>Subversion</th>
+								<th>Betaversion</th>
+								<th>Bin</th>
+								<th>Active</th>
+								<th>actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for vario_version in vario_versions %}
+								<tr>
+									<td>{{ vario_version.id }}</td>
+									<td>{{ vario_version.firmwareType }}</td>
+									<td>{{ vario_version.version }}</td>
+									<td>{{ vario_version.subversion }}</td>
+									<td>{{ vario_version.betaversion }}</td>
+									<td>{{ vario_version.bin }}</td>
+									<td>{{ vario_version.isActive ? 'OUI' : 'NON' }}</td>
+									<td>
+										<a href="{{ path('adminz_varioversion_show', {'id': vario_version.id}) }}" class="btn btn-primary">Voir</a>
+										<a href="{{ path('adminz_varioversion_edit', {'id': vario_version.id}) }}" class="btn btn-primary">Editer</a>
+									</td>
+								</tr>
+							{% else %}
+								<tr>
+									<td colspan="17">Aucun enregistrement</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<br>
+			<div class="card">
+				<div class="card-header">
+					<h3>Liste des fichiers</h3>
+				</div>
+				<div class="card-body">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>libelle</th>
+								<th>Num version</th>
+								<th>Active</th>
+								<th>actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for vario_fichier in vario_fichiers %}
+								<tr>
+									<td>{{ vario_fichier.id }}</td>
+									<td>{{ vario_fichier.libelle }}</td>
+									<td>{{ vario_fichier.numVersion }}</td>
+									<td>{{ vario_fichier.isActive ? 'OUI' : 'NON' }}</td>
+									<td>
+										<a href="{{ path('adminz_variofichier_show', {'id': vario_fichier.id}) }}" class="btn btn-primary">Voir</a>
+										<a href="{{ path('adminz_variofichier_edit', {'id': vario_fichier.id}) }}" class="btn btn-primary">Editer</a>
+									</td>
+								</tr>
+							{% else %}
+								<tr>
+									<td colspan="17">Aucun enregistrement</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

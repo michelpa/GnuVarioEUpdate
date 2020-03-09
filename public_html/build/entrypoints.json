@@ -1,0 +1,26 @@
+{
+  "entrypoints": {
+    "commun": {
+      "js": [
+        "/build/runtime.1103dde6.js",
+        "/build/0.be843bb5.js",
+        "/build/1.3cbbfca6.js",
+        "/build/commun.713b4f6a.js"
+      ],
+      "css": [
+        "/build/1.196df702.css",
+        "/build/commun.bdbca007.css"
+      ]
+    },
+    "app": {
+      "js": [
+        "/build/runtime.1103dde6.js",
+        "/build/0.be843bb5.js",
+        "/build/app.e6d4b0d9.js"
+      ],
+      "css": [
+        "/build/app.f9ccb17e.css"
+      ]
+    }
+  }
+}
