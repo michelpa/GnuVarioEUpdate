@@ -9,6 +9,9 @@ security:
                 users:
                     pascal: { password: '$2y$13$ypyCKJq/qvmJp4HoYDr3xuuYouOyBs4.23sSmP3DCTdUwDzmf2/R2', roles: ['ROLE_SUPER_ADMIN'] }
                     jpg63: { password: '$2y$13$onQnj7oIkxUeToscKUPL1eZOq8iiwiJbJOwyBvg1MiOSdJQA5auq6', roles: ['ROLE_SUPER_ADMIN'] }
+                    ratamuse: { password: '$2y$13$rFEtlFPPpGcAT10pRQXZmub1ZZCAQzwHLQ8HwYaCjUdTNplFmKW4u', roles: ['ROLE_SUPER_ADMIN'] }
+
+     
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
