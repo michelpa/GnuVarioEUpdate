@@ -35,6 +35,14 @@ class DefaultController extends AbstractController
 
 
     /**
+     * @Route("/lang/{_locale}", name="setlang")
+     */
+    public function setLang()
+    {
+        return $this->redirectToRoute('index');
+    }
+
+    /**
      * @Route("/update/{firmwareTypeWithBin}", name="dl_firmwarebin")
      * 
      */

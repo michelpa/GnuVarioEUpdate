@@ -3,14 +3,13 @@
 
  {% block navsection %}
  	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-     
       <a class="navbar-brand" href="/">
         {% block brand %}
-        <div id="my-logo" class="logo">
-        <img src="{{ asset('/assets/img/logo.svg') }}" alt="">
-        </div>
+          <div id="my-logo" class="logo">
+            <img src="{{ asset('/assets/img/logo.svg') }}" alt="">
+          </div>
         {% endblock brand %}
-        <span class="menu-title">GnuVario-E - Mises à jour et ressources</span>
+        <span class="menu-title">{{ "GnuVario-E - Mises à jour et ressources" | trans }}</span>
       </a>
      
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,9 +17,16 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        
         {% block navbar %}
-
+          <ul class="navbar-nav w-100">
+            <li class="nav-item dropdown ml-auto">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown"><span class="flag-icon flag-icon-{{ app.request.locale == 'en' ? 'us' : app.request.locale  }}"> </span></a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="{{ path('setlang', {'_locale' : 'fr'}) }}"><span class="flag-icon flag-icon-fr"></span> Français</a>
+                    <a class="dropdown-item" href="{{ path('setlang', {'_locale' : 'en'}) }}"><span class="flag-icon flag-icon-us"></span> English</a>
+                </div>
+            </li>
+          </ul>
         {% endblock navbar %}
         {% block search %}
         {% endblock search %}

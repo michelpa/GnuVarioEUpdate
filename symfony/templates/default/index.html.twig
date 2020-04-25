@@ -1,6 +1,6 @@
 {% extends 'layout_public.html.twig' %}
 
-{% block title %}Mise à jour firmware
+{% block title %}{{ "Mise à jour firmware" | trans }}
 {% endblock %}
 
 {% block header %}{% endblock %}
@@ -11,16 +11,16 @@
             <br>
             <div class="card">
                 <div class="card-header">
-					<h3>Dernières versions disponibles</h3>
+					<h3>{{ "Dernières versions disponibles" | trans }}</h3>
 				</div>
 				<div class="card-body">
 					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th>Type</th>
-								<th>Version</th>
-								<th>Date</th>
-								<th style="width:430px;">Action</th>
+								<th>{{ "Type" | trans }}</th>
+								<th>{{ "Version" | trans }}</th>
+								<th>{{ "Date" | trans }}</th>
+								<th style="width:430px;">{{ "Action" | trans }}</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -32,9 +32,9 @@
 									</td>
 									<td>{{ v.updated| date('d/m/Y') }}</td>
 									<td class="action">
-										<a class="btn btn-primary btn-sm" href="{{ path('dl_firmware', {'version' : v.id}) }}"><i class="fa fa-download"></i> Télécharger le firmware</a>
+										<a class="btn btn-primary btn-sm" href="{{ path('dl_firmware', {'version' : v.id}) }}"><i class="fa fa-download"></i> {{ "Télécharger le firmware" | trans }}</a>
 										{% if v.hasWeb %}
-											<a class="btn btn-primary btn-sm" href="{{ path('dl_web', {'version' : v.id}) }}"><i class="fa fa-download"></i> Télécharger les fichiers web</a>
+											<a class="btn btn-primary btn-sm" href="{{ path('dl_web', {'version' : v.id}) }}"><i class="fa fa-download"></i> {{ "Télécharger les fichiers web" | trans }}</a>
 										{% endif %}
 									</td>
 								</tr>
@@ -49,17 +49,17 @@
             <br>
             <div class="card">
                 <div class="card-header">
-					<h3>Autres fichiers disponibles</h3>
+					<h3>{{ "Autres fichiers disponibles" | trans }}</h3>
 				</div>
 				<div class="card-body">
 					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th>Libelle</th>
-								<th>Description</th>
-								<th>Version</th>
-								<th>Date</th>
-								<th style="width:430px;">Action</th>
+								<th>{{ "Libellé" | trans }}</th>
+								<th>{{ "Description" | trans }}</th>
+								<th>{{ "Version" | trans }}</th>
+								<th>{{ "Date" | trans }}</th>
+								<th style="width:430px;">{{ "Action" | trans }}</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -70,7 +70,7 @@
 									<td>{{ f.numVersion }}</td>
 									<td>{{ f.updated| date('d/m/Y') }}</td>
 									<td class="action">
-										<a class="btn btn-primary btn-sm" href="{{ path('dl_fichier', {'fichier' : f.id}) }}"><i class="fa fa-download"></i> Télécharger le fichier</a>
+										<a class="btn btn-primary btn-sm" href="{{ path('dl_fichier', {'fichier' : f.id}) }}"><i class="fa fa-download"></i> {{ "Télécharger le fichier" | trans }}</a>
 									</td>
 								</tr>
 							{% endfor %}

@@ -19,5 +19,8 @@
         "dev": "encore dev",
         "watch": "encore dev --watch",
         "build": "encore production --progress --config-name prodConfig"
+    },
+    "dependencies": {
+        "flag-icon-css": "^3.4.6"
     }
 }
