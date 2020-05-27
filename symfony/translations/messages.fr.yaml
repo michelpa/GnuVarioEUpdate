@@ -11,3 +11,22 @@ Libelle: Libelle
 Description: Description
 'Télécharger le fichier': 'Télécharger le fichier'
 'Autres fichiers disponibles': 'Autres fichiers disponibles'
+"Boitier 3D 2.90'' portrait": "Boitier 3D 2.90'' portrait"
+"Fichiers permettant de fabriquer le boitier du Gnuvario-E avec écran 2.90'' en mode portrait": "Fichiers permettant de fabriquer le boitier du Gnuvario-E avec écran 2.90'' en mode portrait"
+"Boitier 3D 2.90'' paysage": "Boitier 3D 2.90'' paysage"
+"Fichiers permettant de fabriquer le boitier du Gnuvario-E avec écran 2.90'' en mode paysage": "Fichiers permettant de fabriquer le boitier du Gnuvario-E avec écran 2.90'' en mode paysage"
+"Boitier 3D 1.54''": "Boitier 3D 1.54''"
+"Fichiers permettant de fabriquer le boitier du Gnuvario-E avec écran 1.54''": "Fichiers permettant de fabriquer le boitier du Gnuvario-E avec écran 1.54''"
+'Fichiers GERBER': 'Fichiers GERBER'
+'Fichier permettant de faire fabriquer le PCB': 'Fichier permettant de faire fabriquer le PCB'
+'Projet KiCad': 'Projet KiCad'
+'Fichiers de conception du PCB avec KiCad': 'Fichiers de conception du PCB avec KiCad'
+'RootSD pour firmware Beta': 'RootSD pour firmware Beta'
+'Dossier carte SD pour firmware Stable': 'Dossier carte SD pour firmware Stable'
+'RootSD pour firmware Stable': 'RootSD pour firmware Stable'
+'Fiche de présentation': 'Fiche de présentation'
+'Fichier Pdf de présentation du Gnuvario-E': 'Fichier Pdf de présentation du Gnuvario-E'
+'Fichier variocal.cfg vide': 'Fichier variocal.cfg vide'
+'Fichier variocal.cfg nécessaire pour procéder à la phase de calibration du vario ou pour annuler une calibration': 'Fichier variocal.cfg nécessaire pour procéder à la phase de calibration du vario ou pour annuler une calibration'
+'Python Calibration V1.0': 'Python Calibration V1.0'
+'Code Python permettant de calculer des paramètres de calibration des accéléromètres': 'Code Python permettant de calculer des paramètres de calibration des accéléromètres'
