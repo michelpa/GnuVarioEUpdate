@@ -65,8 +65,8 @@
 						<tbody>
 							{% for f in fichiers %}
 								<tr>
-									<td>{{ f.libelle }}</td>
-									<td>{{ f.description }}</td>
+									<td>{{ f.libelle | trans }}</td>
+									<td>{{ f.description | trans }}</td>
 									<td>{{ f.numVersion }}</td>
 									<td>{{ f.updated| date('d/m/Y') }}</td>
 									<td class="action">
