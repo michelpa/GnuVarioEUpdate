@@ -22,6 +22,10 @@ class VarioVersion
     const TYPE_Gnuvario290b = "Gnuvario290b";
     const TYPE_Gnuvario291 = "Gnuvario291";
     const TYPE_Gnuvario291b = "Gnuvario291b";
+    const TYPE_Gnuvario390 = "Gnuvario390";
+    const TYPE_Gnuvario390b = "Gnuvario390b";
+    const TYPE_Gnuvario391 = "Gnuvario391";
+    const TYPE_Gnuvario391b = "Gnuvario391b";
 
     /**
      * @ORM\Id()
@@ -223,6 +227,20 @@ class VarioVersion
     private $www10;
 
     /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     * 
+     * @Vich\UploadableField(mapping="update_file", fileNameProperty="gzwww")
+     * 
+     * @var File|null
+     */
+    private $gzwwwFile;
+
+    /**
+     * @ORM\Column(type="string", length=1024, nullable=true)
+     */
+    private $gzwww;
+
+    /**
      * @ORM\Column(type="boolean")
      */
     private $isActive;
@@ -233,7 +251,11 @@ class VarioVersion
         self::TYPE_Gnuvario290 => self::TYPE_Gnuvario290,
         self::TYPE_Gnuvario290b => self::TYPE_Gnuvario290b,
         self::TYPE_Gnuvario291 => self::TYPE_Gnuvario291,
-        self::TYPE_Gnuvario291b => self::TYPE_Gnuvario291b
+        self::TYPE_Gnuvario291b => self::TYPE_Gnuvario291b,
+        self::TYPE_Gnuvario390 => self::TYPE_Gnuvario390,
+        self::TYPE_Gnuvario390b => self::TYPE_Gnuvario390b,
+        self::TYPE_Gnuvario391 => self::TYPE_Gnuvario391,
+        self::TYPE_Gnuvario391b => self::TYPE_Gnuvario391b
     ];
 
 
@@ -790,5 +812,42 @@ class VarioVersion
         }
 
         return $this;
+    }
+
+    public function getGzwww(): ?string
+    {
+        return $this->gzwww;
+    }
+
+    public function setGzwww(?string $gzwww): self
+    {
+        $this->gzwww = $gzwww;
+
+        return $this;
+    }
+
+    /**
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
+     */
+    public function setGzwwwFile(?File $gzwwwFile = null): void
+    {
+        $this->gzwwwFile = $gzwwwFile;
+
+        if (null !== $gzwwwFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updated = new \DateTimeImmutable();
+        }
+    }
+
+    public function getGzwwwFile(): ?File
+    {
+        return $this->gzwwwFile;
     }
 }

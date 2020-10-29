@@ -41,6 +41,13 @@ class WebUpdateController extends AbstractController
                 }
             }
 
+
+            if ($filename = $version->getGzwww()) {
+                $gzwww = $this->generateUrl('web_update_dl_file_with_log', ['version' => $version->getId(), 'uid' => $uid, 'checksum' => $checksum, 'name' => 'gzwww', 'filename' => $filename]);
+            } else {
+                $gzwww = false;
+            }
+
             //composition de la réponse
             $res[$version->getFirmwareType()] = [
                 'version' => $version->getVersion(),
@@ -53,6 +60,10 @@ class WebUpdateController extends AbstractController
 
             if (count($www)) {
                 $res[$version->getFirmwareType()]['www'] = $www;
+            }
+
+            if ($gzwww) {
+                $res[$version->getFirmwareType()]['gzwww'] = $gzwww;
             }
         }
 

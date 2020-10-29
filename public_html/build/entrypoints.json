@@ -2,21 +2,21 @@
   "entrypoints": {
     "commun": {
       "js": [
-        "/build/runtime.cf4317a3.js",
-        "/build/0.05b80bf5.js",
-        "/build/1.0c344d3c.js",
-        "/build/commun.e7692ab4.js"
+        "/build/runtime.d94b3b43.js",
+        "/build/0.dd49b214.js",
+        "/build/1.842675f8.js",
+        "/build/commun.c21d0295.js"
       ],
       "css": [
-        "/build/1.196df702.css",
-        "/build/commun.cb624913.css"
+        "/build/1.43079dbd.css",
+        "/build/commun.5b1eb2d2.css"
       ]
     },
     "app": {
       "js": [
-        "/build/runtime.cf4317a3.js",
-        "/build/0.05b80bf5.js",
-        "/build/app.27dc946e.js"
+        "/build/runtime.d94b3b43.js",
+        "/build/0.dd49b214.js",
+        "/build/app.72d39662.js"
       ],
       "css": [
         "/build/app.f9ccb17e.css"
@@ -24,3 +24,4 @@
     }
   }
 }
+

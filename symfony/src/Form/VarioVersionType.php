@@ -70,6 +70,13 @@ class VarioVersionType extends AbstractType
             'download_label' => 'télécharger',
             'asset_helper' => true,
         ]);
+        $builder->add('gzwwwFile', VichFileType::class, [
+            'required' => false,
+            'allow_delete' => true,
+            'download_uri' => 'download_uri',
+            'download_label' => 'télécharger',
+            'asset_helper' => true,
+        ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

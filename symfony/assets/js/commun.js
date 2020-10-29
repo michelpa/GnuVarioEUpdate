@@ -8,20 +8,20 @@ const $ = require('jquery');
 global.$ = global.jQuery = $;
 
 $(document).ready(function () {
-    $('[data-toggle="tooltip"]').tooltip();
+  $('[data-toggle="tooltip"]').tooltip();
 
-    $('.custom-file-input').on('change',function(){
-        var fileName = document.getElementById("exampleInputFile").files[0].name;
-        $(this).next('.form-control-file').addClass("selected").html(fileName);
-      })
+  $('.custom-file-input').on('change', function () {
+    let fileName = $(this).val().split('\\').pop();
+    $(this).next('.custom-file-label').addClass("selected").html(fileName);
+  });
 });
 
 $(document).ajaxComplete(function () {
-    $('[data-toggle="tooltip"]').tooltip();
+  $('[data-toggle="tooltip"]').tooltip();
 
-    $('.custom-file-input').on('change',function(){
-        var fileName = document.getElementById("exampleInputFile").files[0].name;
-        $(this).next('.form-control-file').addClass("selected").html(fileName);
-      })
+  $('.custom-file-input').on('change', function () {
+    var fileName = document.getElementById("exampleInputFile").files[0].name;
+    $(this).next('.form-control-file').addClass("selected").html(fileName);
+  })
 });
 

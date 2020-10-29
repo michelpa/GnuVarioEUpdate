@@ -90,6 +90,10 @@ class DefaultController extends AbstractController
                 }
             }
 
+            if ($wname = $version->getGzwww()) {
+                $zip->addFile(file_get_contents($kernel->getRootDir() . '/../../public_html' . $uploadHelper->asset($version, 'gzwwwFile')), $wname);
+            }
+
             return new Response($zip->file(), 200, [
                 "Content-type" => "application/octet-stream",
                 "Content-Disposition" => "attachment; filename=www.zip"
@@ -111,6 +115,10 @@ class DefaultController extends AbstractController
             if ($wname = $version->$method()) {
                 $zip->addFile(file_get_contents($kernel->getRootDir() . '/../../public_html' . $uploadHelper->asset($version, 'www' . $i . 'File')), $wname);
             }
+        }
+
+        if ($wname = $version->getGzwww()) {
+            $zip->addFile(file_get_contents($kernel->getRootDir() . '/../../public_html' . $uploadHelper->asset($version, 'gzwwwFile')), $wname);
         }
 
         return new Response($zip->file(), 200, [

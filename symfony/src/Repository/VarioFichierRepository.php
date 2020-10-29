@@ -4,8 +4,7 @@ namespace App\Repository;
 
 use App\Entity\VarioFichier;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Persistence\ManagerRegistry;
-
+use Doctrine\Persistence\ManagerRegistry;
 /**
  * @method VarioFichier|null find($id, $lockMode = null, $lockVersion = null)
  * @method VarioFichier|null findOneBy(array $criteria, array $orderBy = null)
