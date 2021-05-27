@@ -18,14 +18,39 @@ class VarioVersion
 
     const TYPE_Gnuvario154 = "Gnuvario154";
     const TYPE_Gnuvario154b = "Gnuvario154b";
+
+    const TYPE_Gnuvario254 = "Gnuvario254";
+    const TYPE_Gnuvario254b = "Gnuvario254b";
+
     const TYPE_Gnuvario290 = "Gnuvario290";
     const TYPE_Gnuvario290b = "Gnuvario290b";
+
     const TYPE_Gnuvario291 = "Gnuvario291";
     const TYPE_Gnuvario291b = "Gnuvario291b";
+
+    const TYPE_Gnuvario292 = "Gnuvario292";
+    const TYPE_Gnuvario292b = "Gnuvario292b";
+
+    const TYPE_Gnuvario293 = "Gnuvario293";
+    const TYPE_Gnuvario293b = "Gnuvario293b";
+
+    const TYPE_Gnuvario294 = "Gnuvario294";
+    const TYPE_Gnuvario294b = "Gnuvario294b";
+
+    const TYPE_Gnuvario354 = "Gnuvario354";
+    const TYPE_Gnuvario354b = "Gnuvario354b";
+
     const TYPE_Gnuvario390 = "Gnuvario390";
     const TYPE_Gnuvario390b = "Gnuvario390b";
+
     const TYPE_Gnuvario391 = "Gnuvario391";
     const TYPE_Gnuvario391b = "Gnuvario391b";
+
+    const TYPE_Gnuvario395 = "Gnuvario395";
+    const TYPE_Gnuvario395b = "Gnuvario395b";
+
+    const TYPE_Gnuvario396 = "Gnuvario396";
+    const TYPE_Gnuvario396b = "Gnuvario396b";
 
     /**
      * @ORM\Id()
@@ -248,14 +273,39 @@ class VarioVersion
     const FirmwareTypeChoices = [
         self::TYPE_Gnuvario154 => self::TYPE_Gnuvario154,
         self::TYPE_Gnuvario154b => self::TYPE_Gnuvario154b,
+
+        self::TYPE_Gnuvario254 => self::TYPE_Gnuvario254,
+        self::TYPE_Gnuvario254b => self::TYPE_Gnuvario254b,
+
         self::TYPE_Gnuvario290 => self::TYPE_Gnuvario290,
         self::TYPE_Gnuvario290b => self::TYPE_Gnuvario290b,
+
         self::TYPE_Gnuvario291 => self::TYPE_Gnuvario291,
         self::TYPE_Gnuvario291b => self::TYPE_Gnuvario291b,
+        
+        self::TYPE_Gnuvario292 => self::TYPE_Gnuvario292,
+        self::TYPE_Gnuvario292b => self::TYPE_Gnuvario292b,
+
+        self::TYPE_Gnuvario293 => self::TYPE_Gnuvario293,
+        self::TYPE_Gnuvario293b => self::TYPE_Gnuvario293b,
+
+        self::TYPE_Gnuvario294 => self::TYPE_Gnuvario294,
+        self::TYPE_Gnuvario294b => self::TYPE_Gnuvario294b,
+
+        self::TYPE_Gnuvario354 => self::TYPE_Gnuvario354,
+        self::TYPE_Gnuvario354b => self::TYPE_Gnuvario354b,
+
         self::TYPE_Gnuvario390 => self::TYPE_Gnuvario390,
         self::TYPE_Gnuvario390b => self::TYPE_Gnuvario390b,
+
         self::TYPE_Gnuvario391 => self::TYPE_Gnuvario391,
-        self::TYPE_Gnuvario391b => self::TYPE_Gnuvario391b
+        self::TYPE_Gnuvario391b => self::TYPE_Gnuvario391b,
+
+        self::TYPE_Gnuvario395 => self::TYPE_Gnuvario395,
+        self::TYPE_Gnuvario395b => self::TYPE_Gnuvario395b,
+
+        self::TYPE_Gnuvario396 => self::TYPE_Gnuvario396,
+        self::TYPE_Gnuvario396b => self::TYPE_Gnuvario396b
     ];
 
 
